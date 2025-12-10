@@ -66,3 +66,29 @@ function logout() {
         window.location.href = "../login.html"; 
     }
 }
+
+// --- script.js içine ekleyin ---
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const iconClosed = document.getElementById('icon-menu-closed');
+  const iconOpen = document.getElementById('icon-menu-open');
+
+  if (menu.classList.contains('hidden')) {
+    // Menüyü Aç
+    menu.classList.remove('hidden');
+    // İkonu X yap
+    iconClosed.classList.add('hidden');
+    iconOpen.classList.remove('hidden');
+    // Arkaplanı kitle (scroll olmasın)
+    document.body.style.overflow = 'hidden';
+  } else {
+    // Menüyü Kapat
+    menu.classList.add('hidden');
+    // İkonu Hamburger yap
+    iconClosed.classList.remove('hidden');
+    iconOpen.classList.add('hidden');
+    // Arkaplan kilidini aç
+    document.body.style.overflow = 'auto';
+  }
+}

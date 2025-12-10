@@ -1,5 +1,5 @@
 <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-light/10 shadow-md">
-  <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+  <div class="container mx-auto px-6 h-20 flex items-center justify-between relative">
     
     <a href="index.html" class="flex items-center gap-3 group">
       <div class="w-9 h-9 bg-brand-accent rounded-lg flex items-center justify-center text-white shadow-lg shadow-brand-accent/20 group-hover:bg-red-600 transition-colors">
@@ -20,7 +20,7 @@
       <a href="firma.html" id="nav-firma" class="nav-link text-brand-light hover:text-white font-medium text-sm transition-colors">Firma Profili</a>
     </nav>
 
-    <div class="flex items-center gap-5">
+    <div class="hidden lg:flex items-center gap-5">
       <button class="relative text-brand-light hover:text-white transition-colors">
         <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-brand-accent rounded-full border-2 border-brand-dark"></span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -28,8 +28,8 @@
         </svg>
       </button>
 
-      <div class="relative group pl-5 border-l border-brand-light/10">
-        <button class="flex items-center gap-3 focus:outline-none">
+      <div class="relative dropdown-wrapper pl-5 border-l border-brand-light/10">
+        <button onclick="toggleMenu('company-menu')" class="flex items-center gap-3 focus:outline-none group">
           <div class="text-right hidden md:block">
             <p class="text-sm font-bold text-white">Boydak Mobilya</p>
             <p class="text-xs text-brand-light">Kurumsal Üye</p>
@@ -38,15 +38,54 @@
             <span class="text-brand-dark font-black text-xl">B</span>
           </div>
         </button>
-        <div class="absolute right-0 top-full mt-2 w-56 bg-brand-card border border-brand-light/10 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right z-50">
+        <div id="company-menu" class="hidden absolute right-0 top-full mt-2 w-56 bg-brand-card border border-brand-light/10 rounded-xl shadow-2xl py-2 z-50 origin-top-right">
            <a href="#" class="block px-4 py-2.5 text-sm text-brand-light hover:text-white hover:bg-brand-light/10 transition-colors">Hesap Ayarları</a>
            <div class="border-t border-brand-light/10 my-1"></div>
-           <a href="../login.html" class="flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-red-400 hover:text-red-500 hover:bg-red-500/10 transition-colors">
+           <a href="javascript:void(0)" onclick="logout()" class="flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-red-400 hover:text-red-500 hover:bg-red-500/10 transition-colors rounded-b-xl">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
              Güvenli Çıkış
           </a>
         </div>
       </div>
+    </div>
+
+    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-white focus:outline-none p-2">
+      <svg id="icon-menu-closed" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="icon-menu-open" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark/95 backdrop-blur-md border-t border-brand-light/10 absolute w-full left-0 top-20 shadow-2xl h-screen overflow-y-auto z-40">
+    <div class="px-6 py-8 space-y-6">
+      
+      <div class="flex items-center gap-3 pb-4 border-b border-brand-light/10">
+        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-dark font-bold text-xl">B</div>
+        <div>
+          <p class="text-white font-bold">Boydak Mobilya</p>
+          <p class="text-xs text-brand-light">Kurumsal Üye</p>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <a href="index.html" class="block py-3 px-4 rounded-xl text-brand-light hover:text-white hover:bg-brand-light/10 font-medium transition-colors">Panelim</a>
+        <a href="ilan.html" class="block py-3 px-4 rounded-xl text-brand-light hover:text-white hover:bg-brand-light/10 font-medium transition-colors">İlan Yönetimi</a>
+        <a href="aday.html" class="block py-3 px-4 rounded-xl text-brand-light hover:text-white hover:bg-brand-light/10 font-medium transition-colors">Aday Havuzu</a>
+        <a href="firma.html" class="block py-3 px-4 rounded-xl text-brand-light hover:text-white hover:bg-brand-light/10 font-medium transition-colors">Firma Profili</a>
+        <a href="#" class="block py-3 px-4 rounded-xl text-brand-light hover:text-white hover:bg-brand-light/10 font-medium transition-colors">Hesap Ayarları</a>
+      </div>
+
+      <div class="pt-4 border-t border-brand-light/10">
+        <button onclick="logout()" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-red-500/10 text-red-500 font-bold hover:bg-red-500 hover:text-white transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+          Güvenli Çıkış
+        </button>
+      </div>
+
     </div>
   </div>
 </header>

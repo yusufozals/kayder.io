@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yeni İlan Oluştur - Kayseri Kariyer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;900" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { dark: '#241e1c', card: '#2a2523', light: '#8c7b75', accent: '#d72638', text: '#e8e0dd', surface: '#322b29' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased min-h-screen flex flex-col">
+
+  <div id="header-placeholder"></div>
+  <script src="script.js"></script>
+
+  <main class="container mx-auto px-6 py-8">
+    
+    <div class="mb-8">
+      <a href="ilan.html" class="inline-flex items-center gap-2 text-brand-light hover:text-white text-sm mb-4 transition-colors">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+        İlanlara Dön
+      </a>
+      <h1 class="text-3xl font-bold text-white">Yeni İş İlanı Oluştur</h1>
+      <p class="text-brand-light">Aradığınız yeteneği bulmak için detayları eksiksiz doldurun.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <div class="lg:col-span-2 space-y-6">
+        
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl p-6 md:p-8">
+          <h2 class="text-xl font-bold text-white mb-6 border-l-4 border-brand-accent pl-3">Pozisyon Bilgileri</h2>
+          
+          <div class="space-y-6">
+            <div>
+              <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">İlan Başlığı <span class="text-red-500">*</span></label>
+              <input type="text" placeholder="Örn: CNC Router Operatörü" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent placeholder-brand-light/30">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Çalışma Şekli</label>
+                <select class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent cursor-pointer">
+                  <option>Tam Zamanlı</option>
+                  <option>Yarı Zamanlı</option>
+                  <option>Stajyer</option>
+                  <option>Dönemsel</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Pozisyon Seviyesi</label>
+                <select class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent cursor-pointer">
+                  <option>Uzman / Mühendis</option>
+                  <option>Mavi Yaka / İşçi</option>
+                  <option>Yönetici</option>
+                  <option>Yeni Mezun</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Lokasyon (Kayseri)</label>
+                <select class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent cursor-pointer">
+                  <option>Kayseri Organize Sanayi (OSB)</option>
+                  <option>Kayseri Serbest Bölge</option>
+                  <option>Mimarsinan OSB</option>
+                  <option>İncesu OSB</option>
+                  <option>Şehir Merkezi</option>
+                </select>
+              </div>
+              <div>
+                 <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Son Başvuru Tarihi</label>
+                 <input type="date" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent [color-scheme:dark]">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl p-6 md:p-8">
+          <div class="flex justify-between items-center mb-6">
+             <h2 class="text-xl font-bold text-white border-l-4 border-brand-accent pl-3">İş Tanımı & Nitelikler</h2>
+             <button class="text-xs bg-brand-accent/10 text-brand-accent hover:bg-brand-accent hover:text-white px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+               AI ile Oluştur
+             </button>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Genel Nitelikler ve İş Tanımı</label>
+              <textarea rows="10" placeholder="İşin gerekliliklerini, adaydan beklenen yetkinlikleri ve görev tanımını buraya yazınız..." class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent placeholder-brand-light/30 resize-y"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-3">Yan Haklar (Seçiniz)</label>
+              <div class="flex flex-wrap gap-3">
+                <label class="inline-flex items-center gap-2 bg-brand-dark px-4 py-2 rounded-xl border border-brand-light/20 cursor-pointer hover:border-brand-accent transition-colors select-none">
+                  <input type="checkbox" class="rounded bg-brand-card border-brand-light/30 text-brand-accent focus:ring-brand-accent">
+                  <span class="text-sm text-white">Yemek</span>
+                </label>
+                <label class="inline-flex items-center gap-2 bg-brand-dark px-4 py-2 rounded-xl border border-brand-light/20 cursor-pointer hover:border-brand-accent transition-colors select-none">
+                  <input type="checkbox" class="rounded bg-brand-card border-brand-light/30 text-brand-accent focus:ring-brand-accent">
+                  <span class="text-sm text-white">Servis</span>
+                </label>
+                <label class="inline-flex items-center gap-2 bg-brand-dark px-4 py-2 rounded-xl border border-brand-light/20 cursor-pointer hover:border-brand-accent transition-colors select-none">
+                  <input type="checkbox" class="rounded bg-brand-card border-brand-light/30 text-brand-accent focus:ring-brand-accent">
+                  <span class="text-sm text-white">Prim</span>
+                </label>
+                 <label class="inline-flex items-center gap-2 bg-brand-dark px-4 py-2 rounded-xl border border-brand-light/20 cursor-pointer hover:border-brand-accent transition-colors select-none">
+                  <input type="checkbox" class="rounded bg-brand-card border-brand-light/30 text-brand-accent focus:ring-brand-accent">
+                  <span class="text-sm text-white">Özel Sağlık Sigortası</span>
+                </label>
+              </div>
+            </div>
+            
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Maaş Aralığı (Opsiyonel)</label>
+                <div class="flex items-center gap-2">
+                   <input type="number" placeholder="Min" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                   <span class="text-brand-light">-</span>
+                   <input type="number" placeholder="Max" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+              </div>
+              <div>
+                 <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Maaş Para Birimi</label>
+                 <select class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent cursor-pointer">
+                  <option>Türk Lirası (TRY)</option>
+                  <option>Amerikan Doları (USD)</option>
+                  <option>Euro (EUR)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="space-y-6">
+        
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl p-6 sticky top-24">
+          <h3 class="text-lg font-bold text-white mb-4">Yayınlama</h3>
+          <div class="space-y-3">
+            <button class="w-full bg-brand-accent hover:bg-red-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-[0_0_15px_rgba(215,38,56,0.3)] hover:shadow-[0_0_25px_rgba(215,38,56,0.5)]">
+              İlanı Yayınla
+            </button>
+            <button class="w-full bg-brand-light/10 hover:bg-white hover:text-brand-dark text-white font-bold py-3.5 rounded-xl transition-colors">
+              Taslak Olarak Kaydet
+            </button>
+            <button class="w-full text-brand-light hover:text-white font-medium py-2 text-sm transition-colors">
+              Önizleme
+            </button>
+          </div>
+          <div class="mt-4 pt-4 border-t border-brand-light/10 text-xs text-brand-light text-center">
+             Kalan İlan Hakkınız: <span class="text-white font-bold">3</span>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-b from-brand-surface to-brand-dark border border-brand-light/10 rounded-2xl p-6">
+           <h3 class="text-white font-bold mb-3 flex items-center gap-2">
+             <svg class="w-5 h-5 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+             Etkili İlan İpuçları
+           </h3>
+           <ul class="space-y-3 text-sm text-brand-light list-disc list-inside">
+             <li>Başlığınız net ve aranan pozisyonu tam ifade etmelidir.</li>
+             <li>"Yan Haklar" bölümünü doldurmak başvuru sayısını <span class="text-green-500 font-bold">%30 artırır.</span></li>
+             <li>Lokasyon bilgisini (Servis güzergahı vb.) açıklamada belirtin.</li>
+             <li>Aranan tecrübe yılını net belirtin.</li>
+           </ul>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>

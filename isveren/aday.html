@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aday Havuzu - Kayseri Kariyer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;900" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { dark: '#241e1c', card: '#2a2523', light: '#8c7b75', accent: '#d72638', text: '#e8e0dd' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased min-h-screen flex flex-col">
+
+ <div id="header-placeholder"></div>
+  <script src="script.js"></script>
+
+  <main class="container mx-auto px-6 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      <aside class="space-y-6">
+        <div class="bg-brand-card border border-brand-light/10 p-5 rounded-2xl">
+          <h3 class="text-white font-bold mb-4 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+            Detaylı Filtrele
+          </h3>
+          
+          <div class="space-y-4">
+            <div>
+              <label class="text-xs font-bold text-brand-light uppercase mb-1">Anahtar Kelime</label>
+              <input type="text" placeholder="Ünvan, yetenek..." class="w-full bg-brand-dark border border-brand-light/20 rounded-lg px-3 py-2 text-sm text-white focus:ring-1 focus:ring-brand-accent">
+            </div>
+
+            <div>
+              <label class="text-xs font-bold text-brand-light uppercase mb-1">Deneyim (Yıl)</label>
+              <div class="grid grid-cols-2 gap-2">
+                <input type="number" placeholder="Min" class="bg-brand-dark border border-brand-light/20 rounded-lg px-3 py-2 text-sm text-white">
+                <input type="number" placeholder="Max" class="bg-brand-dark border border-brand-light/20 rounded-lg px-3 py-2 text-sm text-white">
+              </div>
+            </div>
+
+            <div>
+              <label class="text-xs font-bold text-brand-light uppercase mb-1">İkamet</label>
+              <select class="w-full bg-brand-dark border border-brand-light/20 rounded-lg px-3 py-2 text-sm text-white">
+                <option>Farketmez</option>
+                <option>Melikgazi</option>
+                <option>Kocasinan</option>
+                <option>Talas</option>
+              </select>
+            </div>
+
+            <div>
+               <label class="text-xs font-bold text-brand-light uppercase mb-1">Özel Durum</label>
+               <label class="flex items-center gap-2 cursor-pointer mb-1">
+                 <input type="checkbox" class="rounded bg-brand-dark border-brand-light/20 text-brand-accent">
+                 <span class="text-sm text-brand-light">MYK Belgeli</span>
+               </label>
+               <label class="flex items-center gap-2 cursor-pointer">
+                 <input type="checkbox" class="rounded bg-brand-dark border-brand-light/20 text-brand-accent">
+                 <span class="text-sm text-brand-light">Referanslı</span>
+               </label>
+            </div>
+
+            <button class="w-full bg-brand-accent hover:bg-red-600 text-white font-bold py-2.5 rounded-xl transition-colors mt-2">Uygula</button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="lg:col-span-3 space-y-4">
+        
+        <div class="flex justify-between items-center mb-2">
+          <p class="text-brand-light text-sm"><span class="text-white font-bold">142</span> aday bulundu</p>
+          <select class="bg-transparent border-none text-brand-accent text-sm font-bold focus:ring-0 cursor-pointer p-0">
+            <option>Önerilen Sıralama</option>
+            <option>Deneyime Göre (Azalan)</option>
+          </select>
+        </div>
+
+        <div class="bg-gradient-to-r from-brand-card to-brand-dark border border-brand-light/20 rounded-2xl p-6 relative group hover:border-brand-accent/40 transition-all">
+          <div class="absolute top-4 right-4">
+             <span class="bg-green-500/10 text-green-500 border border-green-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide flex items-center gap-1">
+               <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+               Dernek Referanslı
+             </span>
+          </div>
+          <div class="flex items-start gap-5">
+            <div class="w-16 h-16 rounded-xl bg-brand-light/10 flex items-center justify-center text-brand-light font-bold text-2xl">K</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">Kemal Yılmaz</h3>
+              <p class="text-brand-light font-medium">Usta Başı / Vardiya Amiri</p>
+              <div class="flex items-center gap-4 text-xs text-brand-light/60 mt-1">
+                 <span>12 Yıl Deneyim</span>
+                 <span>•</span>
+                 <span>Kayseri OSB</span>
+              </div>
+              
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-brand-dark px-2 py-1 rounded text-white border border-brand-light/10">Ekip Yönetimi</span>
+                <span class="text-xs bg-brand-dark px-2 py-1 rounded text-white border border-brand-light/10">CNC</span>
+                <span class="text-xs bg-brand-dark px-2 py-1 rounded text-white border border-brand-light/10">Üretim Planlama</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-brand-light/10 flex justify-end gap-3">
+             <button class="text-brand-light hover:text-white text-sm font-bold px-4 py-2 border border-brand-light/20 rounded-lg hover:bg-brand-light/10">Profili Kaydet</button>
+             <button class="bg-brand-accent text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-red-600 shadow-md">Mesaj Gönder</button>
+          </div>
+        </div>
+
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl p-6 relative group hover:border-brand-accent/40 transition-all">
+          <div class="flex items-start gap-5">
+            <div class="w-16 h-16 rounded-xl bg-brand-light/10 flex items-center justify-center text-brand-light font-bold text-2xl">A</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">Ayşe Demir</h3>
+              <p class="text-brand-light font-medium">Ön Muhasebe Elemanı</p>
+              <div class="flex items-center gap-4 text-xs text-brand-light/60 mt-1">
+                 <span>3 Yıl Deneyim</span>
+                 <span>•</span>
+                 <span>Melikgazi</span>
+              </div>
+              
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-brand-dark px-2 py-1 rounded text-white border border-brand-light/10">Logo Tiger</span>
+                <span class="text-xs bg-brand-dark px-2 py-1 rounded text-white border border-brand-light/10">E-Fatura</span>
+              </div>
+            </div>
+          </div>
+           <div class="mt-4 pt-4 border-t border-brand-light/10 flex justify-end gap-3">
+             <button class="text-brand-light hover:text-white text-sm font-bold px-4 py-2 border border-brand-light/20 rounded-lg hover:bg-brand-light/10">Profili Kaydet</button>
+             <button class="bg-brand-light/10 text-brand-light hover:text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-brand-light/20">Detayları Gör</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Kayseri Kariyer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;900" rel="stylesheet" />
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { dark: '#241e1c', card: '#2a2523', light: '#8c7b75', accent: '#d72638', text: '#e8e0dd', success: '#2e7d32', warning: '#f59e0b', info: '#3b82f6' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased h-screen flex overflow-hidden">
+
+  <aside class="w-64 bg-[#1a1615] border-r border-brand-light/10 flex-col hidden md:flex z-20">
+    <div class="h-20 flex items-center px-6 border-b border-brand-light/10">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-brand-accent rounded flex items-center justify-center text-white shadow-lg shadow-brand-accent/20">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+        </div>
+        <div>
+          <h1 class="font-bold text-white leading-none">Kayseri<span class="text-brand-accent">Panel</span></h1>
+          <p class="text-[10px] text-brand-light uppercase tracking-widest mt-0.5">Süper Admin</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto py-6 px-4 space-y-1">
+      <p class="px-2 text-xs font-bold text-brand-light/50 uppercase tracking-wider mb-2">Yönetim</p>
+      
+      <a href="#" class="flex items-center gap-3 px-4 py-3 bg-brand-accent text-white rounded-xl font-bold shadow-lg shadow-brand-accent/20 transition-all">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+        Dashboard
+      </a>
+
+      <a href="#" class="flex items-center justify-between px-4 py-3 text-brand-light hover:bg-brand-light/5 hover:text-white rounded-xl font-medium transition-colors group">
+        <div class="flex items-center gap-3">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          Onay Bekleyenler
+        </div>
+        <span class="bg-brand-warning/20 text-brand-warning text-xs font-bold px-2 py-0.5 rounded-full border border-brand-warning/20">3</span>
+      </a>
+
+      <a href="#" class="flex items-center gap-3 px-4 py-3 text-brand-light hover:bg-brand-light/5 hover:text-white rounded-xl font-medium transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+        Kullanıcılar
+      </a>
+
+      <a href="#" class="flex items-center gap-3 px-4 py-3 text-brand-light hover:bg-brand-light/5 hover:text-white rounded-xl font-medium transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+        Firmalar
+      </a>
+
+      <a href="#" class="flex items-center gap-3 px-4 py-3 text-brand-light hover:bg-brand-light/5 hover:text-white rounded-xl font-medium transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+        Haberler
+      </a>
+
+      <p class="px-2 text-xs font-bold text-brand-light/50 uppercase tracking-wider mb-2 mt-6">Sistem</p>
+      
+      <a href="#" class="flex items-center gap-3 px-4 py-3 text-brand-light hover:bg-brand-light/5 hover:text-white rounded-xl font-medium transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+        Ayarlar
+      </a>
+    </nav>
+
+    <div class="p-4 border-t border-brand-light/10">
+      <button class="w-full flex items-center justify-center gap-2 p-2 rounded-lg text-red-400 hover:bg-red-500/10 hover:text-red-500 transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+        <span class="text-sm font-bold">Çıkış Yap</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="flex-1 flex flex-col min-w-0 overflow-hidden bg-brand-dark">
+    
+    <header class="h-20 bg-brand-dark/95 border-b border-brand-light/10 flex items-center justify-between px-6 shrink-0 backdrop-blur-md sticky top-0 z-10">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <span class="text-brand-light font-normal">Hoşgeldin,</span> Admin 👋
+      </h2>
+      <div class="flex items-center gap-4">
+        <div class="relative hidden md:block group">
+          <input type="text" placeholder="Panel içinde ara..." class="bg-brand-card border border-brand-light/20 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white focus:ring-1 focus:ring-brand-accent focus:border-brand-accent w-64 transition-all group-hover:border-brand-light/40">
+          <svg class="w-4 h-4 text-brand-light absolute left-3 top-1/2 -translate-y-1/2 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+        </div>
+        
+        <button class="relative p-2.5 bg-brand-card border border-brand-light/10 rounded-xl text-brand-light hover:text-white hover:border-brand-light/30 transition-all">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+          <span class="absolute top-2 right-2 w-2 h-2 bg-brand-accent rounded-full border-2 border-brand-card animate-pulse"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="flex-1 overflow-y-auto p-6 scrollbar-thin">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        
+        <div class="bg-brand-card border border-brand-light/10 p-6 rounded-2xl flex items-center justify-between group hover:border-brand-accent/30 transition-all">
+          <div>
+            <p class="text-brand-light text-xs font-bold uppercase tracking-wider mb-1">Toplam Üye</p>
+            <h3 class="text-3xl font-black text-white">1,245</h3>
+            <span class="text-green-500 text-xs font-bold flex items-center gap-1 mt-1"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg> +12% bu ay</span>
+          </div>
+          <div class="w-12 h-12 bg-brand-light/10 rounded-xl flex items-center justify-center text-brand-light group-hover:bg-brand-accent group-hover:text-white transition-all">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+          </div>
+        </div>
+
+        <div class="bg-brand-card border border-brand-light/10 p-6 rounded-2xl flex items-center justify-between group hover:border-brand-accent/30 transition-all">
+          <div>
+            <p class="text-brand-light text-xs font-bold uppercase tracking-wider mb-1">Aktif Firma</p>
+            <h3 class="text-3xl font-black text-white">528</h3>
+            <span class="text-green-500 text-xs font-bold flex items-center gap-1 mt-1"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg> +5 yeni</span>
+          </div>
+          <div class="w-12 h-12 bg-brand-light/10 rounded-xl flex items-center justify-center text-brand-light group-hover:bg-brand-accent group-hover:text-white transition-all">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-brand-card to-brand-warning/10 border border-brand-warning/30 p-6 rounded-2xl flex items-center justify-between relative overflow-hidden group">
+          <div class="absolute right-0 top-0 w-24 h-24 bg-brand-warning/10 rounded-full blur-3xl group-hover:bg-brand-warning/20 transition-all"></div>
+          <div class="relative z-10">
+            <p class="text-brand-warning text-xs font-bold uppercase tracking-wider mb-1">Onay Bekleyen</p>
+            <h3 class="text-3xl font-black text-white">3 İlan</h3>
+            <span class="text-brand-light/60 text-xs mt-1 block">İşlem bekleniyor...</span>
+          </div>
+          <div class="w-12 h-12 bg-brand-warning/10 rounded-xl flex items-center justify-center text-brand-warning relative z-10">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+        </div>
+
+        <div class="bg-brand-card border border-brand-light/10 p-6 rounded-2xl flex items-center justify-between group hover:border-brand-accent/30 transition-all">
+          <div>
+            <p class="text-brand-light text-xs font-bold uppercase tracking-wider mb-1">Aylık Ziyaret</p>
+            <h3 class="text-3xl font-black text-white">15.4K</h3>
+            <span class="text-brand-light/50 text-xs mt-1 block">Son 30 gün</span>
+          </div>
+          <div class="w-12 h-12 bg-brand-light/10 rounded-xl flex items-center justify-center text-brand-light group-hover:bg-brand-accent group-hover:text-white transition-all">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="lg:col-span-2 bg-brand-card border border-brand-light/10 rounded-2xl p-6 h-fit">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-warning animate-pulse"></span>
+              Onay Bekleyen İşlemler
+            </h3>
+            <button class="text-xs text-brand-accent font-bold hover:text-white transition-colors">Tümünü Yönet &rarr;</button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="text-xs text-brand-light/50 uppercase border-b border-brand-light/10">
+                  <th class="pb-3 pl-2 font-bold">Talep Sahibi</th>
+                  <th class="pb-3 font-bold">Tür / Detay</th>
+                  <th class="pb-3 font-bold">Zaman</th>
+                  <th class="pb-3 text-right font-bold">Aksiyon</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr class="border-b border-brand-light/5 hover:bg-brand-light/5 transition-colors group">
+                  <td class="py-4 pl-2 flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand-dark font-bold text-xs">M</div>
+                    <div>
+                      <p class="text-white font-bold">Mega Metal A.Ş.</p>
+                      <p class="text-[10px] text-brand-light">Kurumsal Üye</p>
+                    </div>
+                  </td>
+                  <td class="py-4">
+                    <span class="text-white block">İlan Onayı</span>
+                    <span class="text-xs text-brand-light">İhracat Sorumlusu</span>
+                  </td>
+                  <td class="py-4 text-brand-light/60">10:30</td>
+                  <td class="py-4 text-right">
+                    <div class="flex justify-end gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                      <button class="bg-brand-success/10 hover:bg-brand-success text-brand-success hover:text-white p-2 rounded-lg transition-all" title="Onayla"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></button>
+                      <button class="bg-brand-dark hover:bg-brand-light/10 text-brand-light hover:text-white p-2 rounded-lg transition-all" title="İncele"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-brand-light/5 hover:bg-brand-light/5 transition-colors group">
+                  <td class="py-4 pl-2 flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand-dark font-bold text-xs">O</div>
+                    <div>
+                      <p class="text-white font-bold">Orta Anadolu</p>
+                      <p class="text-[10px] text-brand-light">Kurumsal Üye</p>
+                    </div>
+                  </td>
+                  <td class="py-4">
+                    <span class="text-white block">İlan Onayı</span>
+                    <span class="text-xs text-brand-light">Dokuma Operatörü</span>
+                  </td>
+                  <td class="py-4 text-brand-light/60">Dün</td>
+                  <td class="py-4 text-right">
+                    <div class="flex justify-end gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                      <button class="bg-brand-success/10 hover:bg-brand-success text-brand-success hover:text-white p-2 rounded-lg transition-all" title="Onayla"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></button>
+                      <button class="bg-brand-dark hover:bg-brand-light/10 text-brand-light hover:text-white p-2 rounded-lg transition-all" title="İncele"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-brand-light/5 transition-colors group">
+                  <td class="py-4 pl-2 flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-xs">K</div>
+                    <div>
+                      <p class="text-white font-bold">Kemal Yılmaz</p>
+                      <p class="text-[10px] text-brand-light">Yeni Aday</p>
+                    </div>
+                  </td>
+                  <td class="py-4">
+                    <span class="text-white block">Üyelik Onayı</span>
+                    <span class="text-xs text-brand-light">TCKN Doğrulama</span>
+                  </td>
+                  <td class="py-4 text-brand-light/60">Dün</td>
+                  <td class="py-4 text-right">
+                    <div class="flex justify-end gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                      <button class="bg-brand-success/10 hover:bg-brand-success text-brand-success hover:text-white p-2 rounded-lg transition-all" title="Onayla"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></button>
+                      <button class="bg-brand-dark hover:bg-brand-light/10 text-brand-light hover:text-white p-2 rounded-lg transition-all" title="İncele"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-6">
+          
+          <div class="bg-brand-card border border-brand-light/10 rounded-2xl p-6">
+            <h3 class="font-bold text-white mb-4">Üye Kayıt Grafiği</h3>
+            <div class="h-48">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+
+          <div class="bg-brand-dark border border-brand-light/10 rounded-2xl p-6">
+            <h3 class="font-bold text-white mb-4">Sistem Durumu</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center text-sm">
+                <span class="text-brand-light">Sunucu Yükü</span>
+                <span class="text-green-500 font-bold">%12 (Düşük)</span>
+              </div>
+              <div class="w-full bg-brand-light/10 rounded-full h-1.5">
+                <div class="bg-green-500 h-1.5 rounded-full" style="width: 12%"></div>
+              </div>
+              
+              <div class="flex justify-between items-center text-sm mt-2">
+                <span class="text-brand-light">Disk Alanı</span>
+                <span class="text-brand-accent font-bold">%65</span>
+              </div>
+              <div class="w-full bg-brand-light/10 rounded-full h-1.5">
+                <div class="bg-brand-accent h-1.5 rounded-full" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Grafik Oluşturma (Chart.js)
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+    gradient.addColorStop(0, 'rgba(215, 38, 56, 0.5)'); // Brand Accent Color
+    gradient.addColorStop(1, 'rgba(215, 38, 56, 0)');
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz'],
+        datasets: [{
+          label: 'Kayıtlar',
+          data: [12, 19, 15, 25, 22, 30],
+          borderColor: '#d72638',
+          backgroundColor: gradient,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: '#fff',
+          pointBorderColor: '#d72638',
+          pointRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { 
+            ticks: { color: '#8c7b75', font: { size: 10 } }, 
+            grid: { display: false } 
+          },
+          y: { 
+            ticks: { color: '#8c7b75', font: { size: 10 } }, 
+            grid: { color: 'rgba(140, 123, 117, 0.1)', borderDash: [5, 5] },
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panelim - Kayseri Derneği Kariyer Portalı</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;900"
+      rel="stylesheet"
+    />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: '#241e1c',      // Volkanik Koyu Zemin
+                card: '#2a2523',      // Kart Zemini
+                light: '#8c7b75',     // Kayseri Taşı / Pasif Metin
+                accent: '#d72638',    // Pastırma/Kayserispor Kırmızısı
+                text: '#e8e0dd',      // Ana Metin
+                success: '#2e7d32',   // Başarılı durumu (Yeşil)
+                warning: '#f57f17'    // Bekleme durumu (Turuncu)
+              }
+            },
+            fontFamily: {
+              sans: ['Manrope', 'Noto Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      /* İnce Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #241e1c; }
+      ::-webkit-scrollbar-thumb { background: #3f3633; border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #d72638; }
+    </style>
+  </head>
+  
+  <body class="bg-brand-dark text-brand-text font-sans antialiased min-h-screen flex flex-col selection:bg-brand-accent selection:text-white">
+    
+    <div id="header-placeholder"></div>
+    <script src="script.js"></script>
+
+    <main class="container mx-auto px-6 py-8 flex-grow">
+      
+      <div class="mb-10">
+        <h1 class="text-2xl font-bold text-white mb-6">Hoş Geldin, Ahmet 👋</h1>
+        
+        <div class="bg-gradient-to-r from-brand-card to-brand-dark border border-brand-light/20 rounded-2xl p-6 relative overflow-hidden shadow-lg">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+            <div class="flex-1 w-full">
+              <div class="flex justify-between items-end mb-2">
+                <div>
+                  <h3 class="text-lg font-bold text-white">Profil Doluluk Oranı</h3>
+                  <p class="text-sm text-brand-light mt-1">İşverenlerin sizi fark etmesi için profilinizi tamamlayın.</p>
+                </div>
+                <span class="text-2xl font-black text-brand-accent">%75</span>
+              </div>
+              <div class="w-full bg-brand-light/10 rounded-full h-3">
+                <div class="bg-brand-accent h-3 rounded-full transition-all duration-1000" style="width: 75%"></div>
+              </div>
+              <p class="text-xs text-brand-light mt-3 flex items-center gap-2">
+                <span class="text-orange-400 font-bold">Eksik:</span> Sertifika Bilgileri, Referanslar
+              </p>
+            </div>
+            <div>
+              <button class="bg-white text-brand-dark hover:bg-gray-200 font-bold py-2.5 px-6 rounded-xl transition-colors text-sm shadow-md">
+                Profili Tamamla
+              </button>
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <div class="bg-brand-card border border-brand-light/10 p-5 rounded-xl">
+          <p class="text-brand-light text-xs font-medium uppercase tracking-wider mb-1">Toplam Başvuru</p>
+          <p class="text-3xl font-black text-white">12</p>
+        </div>
+        <div class="bg-brand-card border border-brand-light/10 p-5 rounded-xl">
+          <p class="text-brand-light text-xs font-medium uppercase tracking-wider mb-1">Görüntülenme</p>
+          <p class="text-3xl font-black text-white">45</p>
+        </div>
+        <div class="bg-brand-card border border-brand-light/10 p-5 rounded-xl">
+          <p class="text-brand-light text-xs font-medium uppercase tracking-wider mb-1">Kayıtlı İlan</p>
+          <p class="text-3xl font-black text-white">3</p>
+        </div>
+        <div class="bg-brand-card border border-brand-light/10 p-5 rounded-xl relative overflow-hidden group cursor-pointer hover:border-brand-accent/30 transition-colors">
+          <p class="text-brand-light text-xs font-medium uppercase tracking-wider mb-1">Dernek Puanı</p>
+          <p class="text-3xl font-black text-brand-accent">9.8</p>
+          <div class="absolute right-2 top-2 text-brand-light/10 group-hover:text-brand-accent/10 transition-colors">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="lg:col-span-2 space-y-6">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-bold text-white">Son Başvurularım</h2>
+            <a href="#" class="text-sm text-brand-accent font-medium hover:underline">Tümünü Gör</a>
+          </div>
+
+          <div class="bg-brand-card border border-brand-light/10 rounded-2xl overflow-hidden">
+            <div class="p-5 border-b border-brand-light/10 hover:bg-brand-light/5 transition-colors group">
+              <div class="flex items-start justify-between mb-2">
+                <div class="flex gap-4">
+                  <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-dark font-bold text-xl shadow-sm">
+                    B
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white group-hover:text-brand-accent transition-colors">CNC Operatörü</h3>
+                    <p class="text-sm text-brand-light">Boydak Mobilya • Kayseri OSB</p>
+                  </div>
+                </div>
+                <span class="bg-brand-warning/20 text-brand-warning text-xs font-bold px-2.5 py-1 rounded border border-brand-warning/20">İnceleniyor</span>
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <p class="text-xs text-brand-light/50">Başvuru Tarihi: 2 gün önce</p>
+                <button class="text-xs font-bold text-brand-text hover:text-white bg-brand-light/10 px-3 py-1.5 rounded transition-colors">Detaylar</button>
+              </div>
+            </div>
+
+            <div class="p-5 border-b border-brand-light/10 hover:bg-brand-light/5 transition-colors group">
+              <div class="flex items-start justify-between mb-2">
+                <div class="flex gap-4">
+                  <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-dark font-bold text-xl shadow-sm">
+                    K
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white group-hover:text-brand-accent transition-colors">Bakım Onarım Şefi</h3>
+                    <p class="text-sm text-brand-light">Kayseri Şeker Fabrikası • Kocasinan</p>
+                  </div>
+                </div>
+                <span class="bg-brand-success/20 text-green-400 text-xs font-bold px-2.5 py-1 rounded border border-brand-success/20">Mülakat Daveti</span>
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <p class="text-xs text-brand-light/50">Başvuru Tarihi: 5 gün önce</p>
+                <div class="flex gap-2">
+                  <button class="text-xs font-bold text-white bg-brand-success px-3 py-1.5 rounded shadow-lg shadow-green-900/50 hover:bg-green-600 transition-colors">Randevu Al</button>
+                  <button class="text-xs font-bold text-brand-text hover:text-white bg-brand-light/10 px-3 py-1.5 rounded transition-colors">Mesajlar</button>
+                </div>
+              </div>
+            </div>
+
+             <div class="p-5 hover:bg-brand-light/5 transition-colors group">
+              <div class="flex items-start justify-between mb-2">
+                <div class="flex gap-4">
+                  <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-dark font-bold text-xl shadow-sm">
+                    Ç
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white group-hover:text-brand-accent transition-colors">Kaynak Ustası</h3>
+                    <p class="text-sm text-brand-light">Çelik Kapı Dünyası • Serbest Bölge</p>
+                  </div>
+                </div>
+                <span class="bg-brand-light/10 text-brand-light text-xs font-bold px-2.5 py-1 rounded border border-brand-light/20">Görüntülendi</span>
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <p class="text-xs text-brand-light/50">Başvuru Tarihi: 1 hafta önce</p>
+                <button class="text-xs font-bold text-brand-text hover:text-white bg-brand-light/10 px-3 py-1.5 rounded transition-colors">Detaylar</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative overflow-hidden rounded-2xl bg-[#3e3431] border border-brand-light/10 p-6 flex items-center justify-between">
+            <div class="relative z-10 max-w-md">
+              <h3 class="text-lg font-bold text-white mb-2">Hemşehri Mentorluğu Başladı!</h3>
+              <p class="text-sm text-brand-light mb-4">Sektördeki tecrübeli Kayserili abilerimizden, ablalarımızdan kariyer tavsiyeleri almak ister misin?</p>
+              <button class="text-sm font-bold text-brand-accent hover:text-white transition-colors flex items-center gap-1">
+                Mentörleri İncele 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </button>
+            </div>
+            <div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-brand-accent/10 to-transparent"></div>
+             <svg class="absolute -right-6 -bottom-6 w-32 h-32 text-brand-light/5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+          </div>
+
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-bold text-white">Sana Özel İlanlar</h2>
+             <button class="text-brand-light hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg></button>
+          </div>
+
+          <div class="grid gap-4">
+            
+            <div class="bg-brand-card border border-brand-light/10 p-4 rounded-2xl hover:border-brand-accent/40 transition-all group relative">
+               <div class="absolute top-3 right-3 flex items-center gap-1 bg-brand-accent/10 px-2 py-0.5 rounded text-[10px] text-brand-accent font-bold border border-brand-accent/10">
+                 %95 Uyum
+               </div>
+              <div class="flex gap-3 mb-3">
+                <div class="w-10 h-10 rounded bg-brand-light/20 flex items-center justify-center text-white font-bold text-sm">O</div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-brand-accent transition-colors">Üretim Vardiya Amiri</h4>
+                  <p class="text-xs text-brand-light">Orta Anadolu Tekstil</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-3">
+                 <span class="text-[10px] bg-brand-dark px-2 py-1 rounded text-brand-light border border-brand-light/10">Deneyimli</span>
+                 <span class="text-[10px] bg-brand-dark px-2 py-1 rounded text-brand-light border border-brand-light/10">Kayseri OSB</span>
+              </div>
+              <button class="w-full py-2 rounded-lg bg-brand-light/10 text-white text-xs font-bold hover:bg-brand-accent hover:text-white transition-colors">İncele</button>
+            </div>
+
+            <div class="bg-brand-card border border-brand-light/10 p-4 rounded-2xl hover:border-brand-accent/40 transition-all group relative">
+               <div class="absolute top-3 right-3 flex items-center gap-1 bg-green-500/10 px-2 py-0.5 rounded text-[10px] text-green-500 font-bold border border-green-500/10">
+                 %88 Uyum
+               </div>
+              <div class="flex gap-3 mb-3">
+                <div class="w-10 h-10 rounded bg-brand-light/20 flex items-center justify-center text-white font-bold text-sm">K</div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-brand-accent transition-colors">Mekanik Bakımcı</h4>
+                  <p class="text-xs text-brand-light">Kumtel</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-3">
+                 <span class="text-[10px] bg-brand-dark px-2 py-1 rounded text-brand-light border border-brand-light/10">Vardiyalı</span>
+                 <span class="text-[10px] bg-brand-dark px-2 py-1 rounded text-brand-light border border-brand-light/10">Servis Var</span>
+              </div>
+              <button class="w-full py-2 rounded-lg bg-brand-light/10 text-white text-xs font-bold hover:bg-brand-accent hover:text-white transition-colors">İncele</button>
+            </div>
+
+             <div class="bg-brand-card border border-brand-light/10 p-4 rounded-2xl hover:border-brand-accent/40 transition-all group relative">
+              <div class="absolute top-3 right-3 flex items-center gap-1 bg-brand-light/10 px-2 py-0.5 rounded text-[10px] text-brand-light font-bold border border-brand-light/10">
+                %70 Uyum
+              </div>
+             <div class="flex gap-3 mb-3">
+               <div class="w-10 h-10 rounded bg-brand-light/20 flex items-center justify-center text-white font-bold text-sm">E</div>
+               <div>
+                 <h4 class="font-bold text-white text-sm group-hover:text-brand-accent transition-colors">Kalite Kontrol</h4>
+                 <p class="text-xs text-brand-light">Erciyes Çelik Halat</p>
+               </div>
+             </div>
+             <div class="flex flex-wrap gap-2 mb-3">
+                <span class="text-[10px] bg-brand-dark px-2 py-1 rounded text-brand-light border border-brand-light/10">Yetiştirilmek Üzere</span>
+             </div>
+             <button class="w-full py-2 rounded-lg bg-brand-light/10 text-white text-xs font-bold hover:bg-brand-accent hover:text-white transition-colors">İncele</button>
+           </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giriş Yap - Kayseri Derneği Kariyer Portalı</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900"
+      rel="stylesheet"
+    />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: '#241e1c',      
+                light: '#8c7b75',     
+                accent: '#d72638',    
+                text: '#e8e0dd',      
+                surface: '#2f2826'    
+              }
+            },
+            fontFamily: {
+              sans: ['Manrope', 'Noto Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  
+  <body class="bg-brand-dark text-brand-text font-sans antialiased h-screen flex overflow-hidden selection:bg-brand-accent selection:text-white">
+    
+    <div class="hidden lg:flex lg:w-1/2 relative flex-col justify-between p-12 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://erciyesalci.com.tr/tema/about-three-img-1.jpg" 
+          class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out"
+          alt="Erciyes"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 flex items-center gap-3">
+        <div class="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center text-white shadow-lg shadow-brand-accent/30">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold leading-none tracking-tight text-white">Kayseri<span class="text-brand-accent">Kariyer</span></h1>
+        </div>
+      </div>
+
+      <div class="relative z-10 max-w-md">
+        <div class="mb-6 inline-block p-3 rounded-full border border-brand-light/30 bg-brand-light/10 backdrop-blur-md">
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h2 class="text-4xl font-bold text-white mb-4 leading-tight">Güvenilir Referans, <br/>Güçlü Gelecek.</h2>
+        <p class="text-lg text-brand-light">"Ticaretin ve sanayinin kalbinde, hemşehrilerimizle omuz omuza veriyor, geleceği birlikte inşa ediyoruz."</p>
+      </div>
+
+      <div class="relative z-10 text-sm text-brand-light/60">
+        © 2024 Kayserililer Derneği
+      </div>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 md:p-12 bg-brand-dark border-l border-brand-light/10 relative">
+      
+      <a href="index.html" class="absolute top-8 right-8 text-sm font-medium text-brand-light hover:text-white flex items-center gap-2 transition-colors">
+        Ana Sayfaya Dön
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+      </a>
+
+      <div class="w-full max-w-md space-y-8">
+        
+        <div class="text-center lg:text-left">
+          <h2 class="text-3xl font-black text-white tracking-tight">Tekrar Hoş Geldiniz</h2>
+          <p class="mt-2 text-brand-light">Hesabınıza giriş yaparak fırsatları yakalayın.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 p-1 bg-brand-surface rounded-xl border border-brand-light/10">
+          
+          <button type="button" id="btn-is-arayan" onclick="switchLoginType('is-arayan')" class="flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-bold bg-brand-light/20 text-white shadow-sm transition-all border border-brand-light/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+            İş Arayan
+          </button>
+          
+          <button type="button" id="btn-isveren" onclick="switchLoginType('isveren')" class="flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium text-brand-light hover:text-white hover:bg-brand-light/10 transition-all border border-transparent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            İşveren
+          </button>
+        </div>
+
+        <form class="space-y-6" onsubmit="handleLogin(event)">
+          <div class="space-y-4">
+            <div>
+              <label for="username" class="block text-sm font-medium text-brand-text mb-1">Kullanıcı Adı</label>
+              <div class="relative">
+                <input id="username" name="username" type="text" required 
+                  class="block w-full pl-10 pr-3 py-3 bg-brand-surface border border-brand-light/20 rounded-xl text-white placeholder-brand-light/50 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all sm:text-sm" 
+                  placeholder="Kullanıcı adınızı girin">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-brand-light/50">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" /></svg>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label for="password" class="block text-sm font-medium text-brand-text mb-1">Şifre</label>
+              <div class="relative">
+                <input id="password" name="password" type="password" required 
+                  class="block w-full pl-10 pr-10 py-3 bg-brand-surface border border-brand-light/20 rounded-xl text-white placeholder-brand-light/50 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all sm:text-sm" 
+                  placeholder="••••••••">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-brand-light/50">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-brand-accent focus:ring-brand-accent border-brand-light/30 rounded bg-brand-surface cursor-pointer">
+              <label for="remember-me" class="ml-2 block text-sm text-brand-light cursor-pointer select-none">Beni hatırla</label>
+            </div>
+            <div class="text-sm">
+              <a href="#" class="font-medium text-brand-accent hover:text-red-500 transition-colors">Şifrenizi mi unuttunuz?</a>
+            </div>
+          </div>
+
+          <div>
+            <button type="submit" class="group relative w-full flex justify-center py-3.5 px-4 border border-transparent text-sm font-bold rounded-xl text-white bg-brand-accent hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-dark focus:ring-brand-accent transition-all shadow-[0_0_15px_rgba(215,38,56,0.3)] hover:shadow-[0_0_25px_rgba(215,38,56,0.5)]">
+              Giriş Yap
+            </button>
+          </div>
+        </form>
+
+        <div class="text-center text-sm">
+          <p class="text-brand-light">
+            Henüz üye değil misiniz? 
+            <a href="singup.html" class="font-bold text-brand-accent hover:text-red-500 transition-colors">Hemen Kayıt Olun</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      let currentType = 'is-arayan';
+
+      // 1. Sekme Değiştirme Fonksiyonu
+      function switchLoginType(type) {
+        currentType = type;
+        
+        const btnIsArayan = document.getElementById('btn-is-arayan');
+        const btnIsveren = document.getElementById('btn-isveren');
+
+        // Stil tanımları
+        const activeClass = "bg-brand-light/20 text-white shadow-sm border-brand-light/20 font-bold";
+        const inactiveClass = "text-brand-light hover:text-white hover:bg-brand-light/10 border-transparent font-medium";
+
+        if (type === 'is-arayan') {
+          btnIsArayan.className = `flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm transition-all border ${activeClass}`;
+          btnIsveren.className = `flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm transition-all border ${inactiveClass}`;
+        } else {
+          btnIsveren.className = `flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm transition-all border ${activeClass}`;
+          btnIsArayan.className = `flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm transition-all border ${inactiveClass}`;
+        }
+      }
+
+      // 2. Giriş İşlemi Fonksiyonu
+      function handleLogin(event) {
+        event.preventDefault(); // Sayfa yenilenmesini engelle
+
+        // Form verilerini al
+        const usernameInput = document.getElementById('username').value.trim();
+        const passwordInput = document.getElementById('password').value.trim();
+
+        console.log("Deneme:", usernameInput, passwordInput);
+
+        // KONTROL 1: İŞVEREN
+        if (usernameInput === 'kayserili1' && passwordInput === '12345') {
+          // Görsel olarak sekmeyi güncelle (isteğe bağlı)
+          switchLoginType('isveren');
+          
+          alert("İşveren girişi başarılı! Yönlendiriliyorsunuz...");
+          window.location.href = "isveren/index.html"; // İşveren Paneline Git
+        } 
+        
+        // KONTROL 2: KULLANICI (İŞ ARAYAN)
+        else if (usernameInput === 'kayserili2' && passwordInput === '12345') {
+          switchLoginType('is-arayan');
+
+          alert("Kullanıcı girişi başarılı! Yönlendiriliyorsunuz...");
+          window.location.href = "kullanıcı/index.html"; // Ana Sayfaya Git (Kullanıcı girişli)
+        } 
+        
+        // HATA
+        else {
+          alert("Hatalı Giriş!\n\nDoğru Bilgiler:\nİşveren: kayserili1 / 12345\nKullanıcı: kayserili2 / 12345");
+        }
+      }
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firma Profili - Kayseri Kariyer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;900" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { dark: '#241e1c', card: '#2a2523', light: '#8c7b75', accent: '#d72638', text: '#e8e0dd', surface: '#322b29' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased min-h-screen flex flex-col">
+
+  <div id="header-placeholder"></div>
+  <script src="script.js"></script>
+
+  <main class="container mx-auto px-6 py-8">
+    <div class="flex flex-col md:flex-row gap-8">
+      
+      <aside class="w-full md:w-80 space-y-6">
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl overflow-hidden text-center relative sticky top-24">
+           <div class="h-24 bg-gradient-to-r from-brand-accent/20 to-brand-dark relative group"></div>
+           
+           <div class="px-6 pb-6">
+             <div class="w-24 h-24 mx-auto bg-white rounded-xl flex items-center justify-center -mt-12 mb-4 relative border-4 border-brand-card shadow-lg">
+               <span class="text-5xl font-black text-brand-dark">B</span>
+             </div>
+             
+             <h2 class="text-xl font-bold text-white">Boydak Mobilya</h2>
+             <p class="text-brand-light text-sm mt-1">Anonim Şirketi</p>
+             
+             <div class="mt-6 mb-2 flex justify-between text-xs text-brand-light">
+                <span>Profil Doluluğu</span>
+                <span class="text-brand-accent font-bold">%85</span>
+             </div>
+             <div class="w-full bg-brand-dark rounded-full h-2 mb-6">
+               <div class="bg-brand-accent h-2 rounded-full" style="width: 85%"></div>
+             </div>
+
+             <div class="pt-4 border-t border-brand-light/10 text-left space-y-3">
+               <div class="flex items-center gap-3 text-sm text-brand-light">
+                 <svg class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                 Melikgazi, Kayseri
+               </div>
+               <div class="flex items-center gap-3 text-sm text-brand-light">
+                 <svg class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                 ik@boydak.com
+               </div>
+             </div>
+           </div>
+        </div>
+      </aside>
+
+      <div class="flex-1 bg-brand-card border border-brand-light/10 rounded-2xl p-8 min-h-[600px]">
+        
+        <div class="flex border-b border-brand-light/10 mb-8 overflow-x-auto gap-6">
+          <button onclick="switchTab('genel')" id="tab-genel" class="pb-4 text-sm font-bold text-brand-accent border-b-2 border-brand-accent transition-colors whitespace-nowrap">Genel Bilgiler</button>
+          <button onclick="switchTab('galeri')" id="tab-galeri" class="pb-4 text-sm font-medium text-brand-light hover:text-white border-b-2 border-transparent hover:border-brand-light/20 transition-colors whitespace-nowrap">Medya & Galeri</button>
+          <button onclick="switchTab('ayarlar')" id="tab-ayarlar" class="pb-4 text-sm font-medium text-brand-light hover:text-white border-b-2 border-transparent hover:border-brand-light/20 transition-colors whitespace-nowrap">Ayarlar</button>
+        </div>
+
+        <div id="content-genel" class="tab-content active">
+          
+          <div class="flex justify-between items-center mb-8">
+            <div>
+              <h2 class="text-xl font-bold text-white">Firma Bilgileri</h2>
+              <p class="text-sm text-brand-light">Kurumsal kimliğinizi ve iletişim kanallarınızı güncel tutun.</p>
+            </div>
+            <button class="bg-brand-accent hover:bg-red-600 text-white font-bold py-2.5 px-6 rounded-xl transition-colors shadow-lg shadow-brand-accent/20">Değişiklikleri Kaydet</button>
+          </div>
+
+          <form class="space-y-10">
+            
+            <div>
+              <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2 border-l-4 border-brand-accent pl-3">
+                📌 Temel Firma Bilgileri
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-1">
+                <div class="md:col-span-2 flex items-center gap-6 mb-2">
+                   <div class="w-24 h-24 bg-brand-dark border-2 border-dashed border-brand-light/30 rounded-xl flex flex-col items-center justify-center text-brand-light hover:border-brand-accent hover:text-brand-accent cursor-pointer transition-all">
+                      <svg class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                      <span class="text-[10px] font-bold">Logo Yükle</span>
+                   </div>
+                   <div class="flex-1">
+                     <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Firma Adı</label>
+                     <input type="text" value="Boydak Mobilya Sanayi ve Ticaret A.Ş." class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                   </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Firma Türü</label>
+                  <select class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent cursor-pointer">
+                    <option>Anonim Şirketi (A.Ş.)</option>
+                    <option>Limited Şirketi (Ltd. Şti.)</option>
+                    <option>Şahıs Şirketi</option>
+                    <option>Startup / Girişim</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Vergi / MERSİS No</label>
+                  <input type="text" value="012345678911111" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Sektör</label>
+                  <select class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent cursor-pointer">
+                    <option>Mobilya & İmalat</option>
+                    <option>Metal & Çelik</option>
+                    <option>Gıda</option>
+                    <option>Tekstil</option>
+                    <option>Bilişim & Yazılım</option>
+                  </select>
+                </div>
+                <div class="md:col-span-2">
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Şirket Hakkında (Kısa Açıklama)</label>
+                  <textarea rows="4" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent resize-none placeholder-brand-light/30">1957 yılında Kayseri'de kurulan firmamız, Türkiye'nin en köklü mobilya üreticilerinden biridir. 2000+ çalışanımızla ülke ekonomisine katkı sağlamaktayız.</textarea>
+                  <p class="text-xs text-brand-light mt-1 text-right">0/500 Karakter</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-brand-light/10 my-6"></div>
+
+            <div>
+              <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2 border-l-4 border-brand-accent pl-3">
+                📌 İletişim Bilgileri
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="md:col-span-2">
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Açık Adres</label>
+                  <input type="text" value="Organize Sanayi Bölgesi 12. Cadde No:5, Melikgazi / KAYSERİ" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Telefon Numarası</label>
+                  <input type="tel" value="0352 322 14 00" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Kurumsal E-Posta</label>
+                  <input type="email" value="info@boydak.com" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Resmî Web Sitesi</label>
+                  <input type="url" value="https://www.boydak.com" class="w-full bg-brand-dark border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+                
+                <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                   <div>
+                     <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">LinkedIn Profil URL</label>
+                     <div class="relative">
+                       <span class="absolute left-4 top-1/2 -translate-y-1/2 text-brand-light"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></span>
+                       <input type="text" placeholder="linkedin.com/company/..." class="w-full bg-brand-dark border border-brand-light/20 rounded-xl py-3 pl-10 pr-4 text-white focus:ring-1 focus:ring-brand-accent">
+                     </div>
+                   </div>
+                   <div>
+                     <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Instagram URL</label>
+                     <div class="relative">
+                       <span class="absolute left-4 top-1/2 -translate-y-1/2 text-brand-light"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span>
+                       <input type="text" placeholder="instagram.com/..." class="w-full bg-brand-dark border border-brand-light/20 rounded-xl py-3 pl-10 pr-4 text-white focus:ring-1 focus:ring-brand-accent">
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-brand-light/10 my-6"></div>
+
+            <div class="bg-brand-dark border border-brand-light/10 rounded-2xl p-6">
+              <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2 border-l-4 border-brand-accent pl-3">
+                📌 İnsan Kaynakları Yetkilisi Bilgileri
+                <span class="text-xs font-normal text-brand-light ml-2 bg-brand-card px-2 py-0.5 rounded">(Sadece adaylarla iletişim için kullanılır)</span>
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Yetkili Adı Soyadı</label>
+                  <input type="text" value="Zeynep Yılmaz" class="w-full bg-brand-card border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Yetkili Pozisyonu</label>
+                  <input type="text" value="İnsan Kaynakları Müdürü" class="w-full bg-brand-card border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Yetkili Telefon</label>
+                  <input type="tel" value="0532 555 66 77" class="w-full bg-brand-card border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Yetkili E-Posta</label>
+                  <input type="email" value="ik@boydak.com" class="w-full bg-brand-card border border-brand-light/20 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-brand-accent">
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <div id="content-galeri" class="tab-content">
+          <p class="text-brand-light">Galeri yönetimi buraya gelecek...</p>
+        </div>
+        <div id="content-ayarlar" class="tab-content">
+          <p class="text-brand-light">Hesap ayarları buraya gelecek...</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
+        btn.classList.remove('text-brand-accent', 'border-brand-accent');
+        btn.classList.add('text-brand-light', 'border-transparent');
+      });
+      document.getElementById('content-' + tabId).classList.add('active');
+      const activeBtn = document.getElementById('tab-' + tabId);
+      activeBtn.classList.remove('text-brand-light', 'border-transparent');
+      activeBtn.classList.add('text-brand-accent', 'border-brand-accent');
+    }
+  </script>
+</body>
+</html>

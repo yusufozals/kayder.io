@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakkımızda - Kayseri Kariyer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;900" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { dark: '#241e1c', card: '#2a2523', light: '#8c7b75', accent: '#d72638', text: '#e8e0dd' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased min-h-screen flex flex-col">
+
+  <div id="header-placeholder"></div>
+
+  <main class="flex-grow">
+    
+    <section class="relative py-24 px-6 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+         <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover opacity-10 mix-blend-overlay">
+         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+      </div>
+      
+      <div class="relative z-10 container mx-auto text-center max-w-4xl">
+        <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-4 block">Kayseri Derneği Kariyer Portalı</span>
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+          Köklerden Geleceğe, <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-red-500">Birlikte Yürüyoruz.</span>
+        </h1>
+        <p class="text-lg text-brand-light leading-relaxed max-w-2xl mx-auto">
+          Ahilik kültüründen aldığımız ilhamla, Kayserili işverenleri ve yetenekleri tek bir çatı altında buluşturuyor; güven, referans ve dayanışma ağını dijital dünyaya taşıyoruz.
+        </p>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-16">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="w-full lg:w-1/2 relative">
+          <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-accent/20 rounded-full blur-2xl"></div>
+          <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-accent/10 rounded-full blur-2xl"></div>
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" alt="Toplantı" class="relative rounded-2xl shadow-2xl border border-brand-light/10 grayscale hover:grayscale-0 transition-all duration-700">
+          
+          <div class="absolute -bottom-6 -right-6 bg-brand-card p-6 rounded-xl border border-brand-light/10 shadow-xl hidden md:block">
+            <p class="text-brand-light text-xs uppercase font-bold mb-1">Kuruluş</p>
+            <p class="text-3xl font-black text-white">1985</p>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 space-y-6">
+          <h2 class="text-3xl font-bold text-white">Güvenin ve Ticaretin Başkenti</h2>
+          <p class="text-brand-text/80 leading-relaxed">
+            Kayserililer Derneği olarak amacımız sadece bir sivil toplum kuruluşu olmak değil, aynı zamanda şehrimizin ekonomik kalkınmasına yön veren bir güç birliği oluşturmaktır.
+          </p>
+          <p class="text-brand-text/80 leading-relaxed">
+            Bu portal, "Hemşehrimden başkasına güvenmem" diyen sanayicimizle, "Memleketimde çalışmak istiyorum" diyen gençlerimiz arasında modern bir köprüdür. Referans sistemimiz sayesinde, CV'lerin ötesindeki insanı tanıyor ve tanıtıyoruz.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 pt-4">
+            <div class="flex items-start gap-3">
+              <div class="p-2 bg-brand-accent/10 rounded-lg text-brand-accent"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+              <div>
+                <h4 class="font-bold text-white">Referanslı Sistem</h4>
+                <p class="text-xs text-brand-light">Güvenilir aday ve firma eşleşmesi.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="p-2 bg-brand-accent/10 rounded-lg text-brand-accent"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg></div>
+              <div>
+                <h4 class="font-bold text-white">Güçlü Network</h4>
+                <p class="text-xs text-brand-light">500+ Kurumsal üye firma.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-brand-card border-y border-brand-light/10 py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl font-bold text-white mb-4">Değerlerimiz</h2>
+          <p class="text-brand-light">Bizi biz yapan, ticarette ve sosyal hayatta yolumuzu aydınlatan ilkelerimiz.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-brand-dark p-8 rounded-2xl border border-brand-light/10 hover:border-brand-accent/50 transition-colors group">
+            <div class="w-14 h-14 bg-brand-light/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Ahilik Kültürü</h3>
+            <p class="text-brand-light text-sm leading-relaxed">Ticarette dürüstlük, sanatta ustalık ve sosyal hayatta kardeşlik ilkelerini dijital çağa taşıyoruz.</p>
+          </div>
+
+          <div class="bg-brand-dark p-8 rounded-2xl border border-brand-light/10 hover:border-brand-accent/50 transition-colors group">
+            <div class="w-14 h-14 bg-brand-light/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Girişimcilik</h3>
+            <p class="text-brand-light text-sm leading-relaxed">Kayseri'nin genlerinde olan girişimcilik ruhunu destekliyor, yeni nesil fikirlerin önünü açıyoruz.</p>
+          </div>
+
+          <div class="bg-brand-dark p-8 rounded-2xl border border-brand-light/10 hover:border-brand-accent/50 transition-colors group">
+            <div class="w-14 h-14 bg-brand-light/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Sosyal Sorumluluk</h3>
+            <p class="text-brand-light text-sm leading-relaxed">Kazandığını memleketiyle paylaşma düsturuyla, istihdamı artırmayı en büyük sosyal sorumluluk görüyoruz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-20">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-2">Yönetim Kurulu</h2>
+          <p class="text-brand-light">Derneğimize yön veren değerli iş insanlarımız.</p>
+        </div>
+        <a href="#" class="text-brand-accent font-bold text-sm hover:underline mt-4 md:mt-0">Tüm Heyeti Gör &rarr;</a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl overflow-hidden group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+          </div>
+          <div class="p-5 relative -mt-12">
+            <h3 class="text-lg font-bold text-white">Mustafa Demir</h3>
+            <p class="text-brand-accent text-sm font-medium mb-2">Yönetim Kurulu Başkanı</p>
+            <p class="text-xs text-brand-light">Demir Grup YK Başkanı</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl overflow-hidden group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+          </div>
+          <div class="p-5 relative -mt-12">
+            <h3 class="text-lg font-bold text-white">Ayşe Yılmaz</h3>
+            <p class="text-brand-accent text-sm font-medium mb-2">Başkan Yardımcısı</p>
+            <p class="text-xs text-brand-light">Yılmaz Tekstil CEO</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl overflow-hidden group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+          </div>
+          <div class="p-5 relative -mt-12">
+            <h3 class="text-lg font-bold text-white">Mehmet Kaya</h3>
+            <p class="text-brand-accent text-sm font-medium mb-2">Genel Sekreter</p>
+            <p class="text-xs text-brand-light">Kaya Lojistik</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-card border border-brand-light/10 rounded-2xl overflow-hidden group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+          </div>
+          <div class="p-5 relative -mt-12">
+            <h3 class="text-lg font-bold text-white">Ali Öztürk</h3>
+            <p class="text-brand-accent text-sm font-medium mb-2">Sayman</p>
+            <p class="text-xs text-brand-light">Öztürk Gıda A.Ş.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="bg-gradient-to-r from-brand-accent to-red-800 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-4">Bu Büyük Ailenin Parçası Olun</h2>
+            <p class="text-white/80 mb-8">Kayseri'nin gücüne güç katmak, hemşehrilerimizle omuz omuza vermek için derneğimize üye olun.</p>
+            <button class="bg-white text-brand-accent px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">Üyelik Başvurusu</button>
+          </div>
+          <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          <div class="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="script.js"></script>
+</body>
+</html>

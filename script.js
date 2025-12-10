@@ -106,4 +106,26 @@ window.onclick = function(event) {
   if (event.target === backdrop) { // modal yerine backdrop'a tıklamayı kontrol ediyoruz
      closeModal();
   }
+
+}
+
+// script.js içine:
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const iconClosed = document.getElementById('icon-menu-closed');
+  const iconOpen = document.getElementById('icon-menu-open');
+
+  if (menu.classList.contains('hidden')) {
+    // Menüyü Aç
+    menu.classList.remove('hidden');
+    iconClosed.classList.add('hidden');
+    iconOpen.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Kaydırmayı kilitle
+  } else {
+    // Menüyü Kapat
+    menu.classList.add('hidden');
+    iconClosed.classList.remove('hidden');
+    iconOpen.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Kaydırmayı aç
+  }
 }

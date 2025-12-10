@@ -34,4 +34,27 @@ function setActiveLink() {
             link.className = inactiveClass;
         }
     });
+
+}
+
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const iconClosed = document.getElementById('icon-menu-closed');
+    const iconOpen = document.getElementById('icon-menu-open');
+
+    if (!menu) return; // Hata önleyici
+
+    if (menu.classList.contains('hidden')) {
+        // Menüyü Aç
+        menu.classList.remove('hidden');
+        if(iconClosed) iconClosed.classList.add('hidden');
+        if(iconOpen) iconOpen.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Arka planı kilitle
+    } else {
+        // Menüyü Kapat
+        menu.classList.add('hidden');
+        if(iconClosed) iconClosed.classList.remove('hidden');
+        if(iconOpen) iconOpen.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Kilidi aç
+    }
 }
